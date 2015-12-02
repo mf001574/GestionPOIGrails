@@ -15,6 +15,8 @@ class UrlMappings {
         //Les mapping pour la page des utilisateurs
         "/utilisateur/" (controller: "utilisateur", action: "index")
         "/utilisateur/$id" (controller: "utilisateur", action: "afficher")
+        "/utilisateur/modifierInfo" (controller: "utilisateur", action: "modifierInfo")
+        "/utilisateur/modifierMDP" (controller: "utilisateur", action:"modifierMDP")
         "500"(view:'/error')
 	}
 }
