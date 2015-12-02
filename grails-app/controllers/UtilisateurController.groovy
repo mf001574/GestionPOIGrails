@@ -103,12 +103,13 @@ class UtilisateurController {
         boolean utilisateurSession = false
         Long vId = Long.valueOf(params.get("id"))
         Utilisateur u = Utilisateur.findWhere(id:vId)
+        ArrayList<Evaluation> evals = Evaluation.findAllByUtilisateur(u)
         if(u!= null){
             // si utilisateur de la session
             if(u.id.equals(session.utilisateur.id)){
                 utilisateurSession = true
             }
-            render(view:"afficher", model:["nom":u.nom,"prenom":u.prenom,"email":u.email, "utilisateurSession":utilisateurSession])
+            render(view:"afficher", model:["nom":u.nom,"prenom":u.prenom,"email":u.email, "utilisateurSession":utilisateurSession, "evaluations":evals])
         }else{
             render "mauvais utilisateur"
         }

@@ -24,7 +24,14 @@
         <fieldset>
             <legend>Commentaires</legend>
             <ul>
-
+                <g:each var="eval" in="${evaluations}">
+                    <li>Evaluation sur le POI : ${eval.poi.nom}
+                        <ul>
+                            <li>Note : ${eval.note}</li>
+                            <li>Commentaire : ${eval.commentaire}</li>
+                        </ul>
+                    </li>
+                </g:each>
             </ul>
         </fieldset>
 
