@@ -7,7 +7,11 @@ class UrlMappings {
             }
         }
 
-        "/"(view:"/index")
+        "/"(view:"/index2")
+        "/index"(view:"/index")
+        "/backEnd"(view:"/accueilBackEnd")
+        "/login"(controller: "login", action: "login")
+        "/utilisateur/$id" (controller: "utilisateur", action: "afficher")
         "500"(view:'/error')
 	}
 }
