@@ -82,22 +82,18 @@
     </style>
 </head>
 <body>
+<a href="#page-body" class="skip"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 <div id="page-body" role="main">
-    <h1>Page de connexion</h1>
-    <g:if test="${session.utilisateur}">
-        Connecté en tant que ${session.utilisateur.email}
-    </g:if>
-    <g:else>
-        <g:form controller="login" action="connect"  method="POST">
-            <label>Email : </label>
-            <g:field type="email" name="email"/><br/>
-            <label>Mot de passe: </label>
-            <g:passwordField name="mdp"/><br/>
-            <g:submitButton name="bConnexion" value="Se connecter"/>
-        </g:form>
-        ${session.msgErrLogin}
-    </g:else>
-
+    <h1>Back-end de l'application gestion de POI</h1>
+    <p>Les rubriques ci-dessous permettent de gérer les données de l'application.</p>
+    <div id="controller-list" role="navigation">
+        <h2>Menu</h2>
+        <ul>
+            <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
+                <li class="controller"><g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link></li>
+            </g:each>
+        </ul>
+    </div>
 
 </div>
 </body>

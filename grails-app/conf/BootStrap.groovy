@@ -12,12 +12,12 @@ class BootStrap {
     def init = {
         try{
             println("----------init-----------");
-            println("-----------Génération des images par défaut-----------")
+            println("-----------GÃ©nÃ©ration des images par dÃ©faut-----------")
             def imgPOI = new Image(src: "imgPOI/imgPoiDefaut.jpg")
             imgPOI.save(failOnError: true , flush: true)
-            println("---------Génération des emplacements---------")
+            println("---------GÃ©nÃ©ration des emplacements---------")
             listeE = emplacementService.creerEmplacement()
-            println("----------Creation des POI groupés---------")
+            println("----------Creation des POI groupÃ©s---------")
             listePOI = groupePoiService.creerPoiGroupe(listeE,imgPOI)
             println("----------Creation des utilisateurs---------")
             listeU = utilisateurService.creerUtilisateurs()
