@@ -82,19 +82,22 @@
     </style>
 </head>
 <body>
-<a href="#page-body" class="skip"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 <div id="page-body" role="main">
     <h1>Page de connexion</h1>
+    <g:if test="${session.utilisateur}">
+        Connecté en tant que ${session.utilisateur.email}
+    </g:if>
+    <g:else>
+        <g:form controller="login" action="connect"  method="POST">
+            <label>Email : </label>
+            <g:field type="email" name="email"/><br/>
+            <label>Mot de passe: </label>
+            <g:passwordField name="mdp"/><br/>
+            <g:submitButton name="bConnexion" value="Se connecter"/>
+        </g:form>
+        ${session.msgErrLogin}
+    </g:else>
 
-    <g:form controller="person" action="save">
-        <label>Nom : </label>
-        <g:textField name="Nom"/><br/>
-        <label>Prénom : </label>
-        <g:textField name="Prenom"/><br/>
-        <label>Mot de passe: </label>
-        <g:passwordField name="mdp"/><br/>
-        <g:actionSubmit value="Save"/>
-    </g:form>
 
 </div>
 </body>
