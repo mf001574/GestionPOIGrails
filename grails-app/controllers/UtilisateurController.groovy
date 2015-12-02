@@ -18,10 +18,6 @@ class UtilisateurController {
         respond new Utilisateur(params)
     }
 
-    def afficher(){
-        render session.utilisateur;
-    }
-
     @Transactional
     def save(Utilisateur utilisateurInstance) {
         if (utilisateurInstance == null) {
@@ -99,5 +95,13 @@ class UtilisateurController {
             }
             '*' { render status: NOT_FOUND }
         }
+    }
+
+    //FRONT-END
+    def afficher(){
+        Long vId = Long.valueOf(params.get("id"))
+        Utilisateur u = Utilisateur.findWhere(id:vId)
+        render(view:"afficher", model:["nom":u.nom,"prenom":u.prenom,"email":u.email])
+
     }
 }

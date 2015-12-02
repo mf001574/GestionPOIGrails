@@ -17,7 +17,6 @@ class LoginController {
         Utilisateur u = Utilisateur.findWhere(email : params.get("email"),mdp: params.get("mdp").encodeAsMD5())
         if(u!=null){
             session.utilisateur = u;
-            session.msgErrLogin=""
             redirect(uri:"/utilisateur/"+u.id)
         }else{
             println("Echec d'authentification")
