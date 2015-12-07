@@ -19,7 +19,10 @@ environments {
     development {
         dataSource {
             dbCreate = "create-drop"
-            url = "jdbc:mysql://127.0.0.1/poi"
+            driverClassName ="org.h2.Driver"
+            username = "root"
+            password = ""
+           /* url = "jdbc:mysql://127.0.0.1/poi"
             driverClassName = "com.mysql.jdbc.Driver"
             username = "root"
             password =""
@@ -42,7 +45,7 @@ environments {
                 testOnReturn = false
                 jdbcInterceptors = "ConnectionState"
                 defaultTransactionIsolation = java.sql.Connection.TRANSACTION_READ_COMMITTED
-            }
+            }*/
         }
     }
     test {

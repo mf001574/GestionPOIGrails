@@ -11,6 +11,7 @@ class GroupePoiService {
     String[] nomGroupe = ["Sport","Science","Culture"]
     String[][] cheminImg = [["imgGroupe/sport.jpg"],["imgGroupe/science.png","imgGroupe/science2.jpg"],["imgGroupe/culture.jpg"]]
     ArrayList<POI> creerPoiGroupe(ArrayList<Emplacement> listeE, imgPOI){
+        Random rand = new Random();
         ArrayList<POI> listePOI = new ArrayList<POI>()
         for( i in 0..2 ) {
             println("--Création du groupe "+nomGroupe[i])
@@ -26,14 +27,15 @@ class GroupePoiService {
             for(j in 0..4) {
                 println("----Création du POI "+nomPOI[i][j])
                 def poi
+                int posComNote = Math.abs(rand.nextInt() % (listeE.size()) )
                 if(nomPOI[i][j].equals("Football")){
                     Image img2 = new Image(src: "imgPOI/foot.jpg")
                     imgPOI.save(failOnError: true , flush: true)
-                    poi = new POI(nom: nomPOI[i][j], description: "Poi pour les amoureux de football.", emplacement: listeE.get(j%listeE.size()))
+                    poi = new POI(nom: nomPOI[i][j], description: "Poi pour les amoureux de football.", emplacement: listeE.get(posComNote))
                     poi.addToImages(img2)
                     poi.addToImages(imgPOI)
                 }else{
-                    poi = new POI(nom: nomPOI[i][j], description: "Pas de commentaire pour ce POI.", emplacement: listeE.get(j%listeE.size()))
+                    poi = new POI(nom: nomPOI[i][j], description: "Pas de commentaire pour ce POI.", emplacement: listeE.get(posComNote))
                     poi.addToImages(imgPOI)
                 }
                 poi.save(flush: true, failOnError: true)

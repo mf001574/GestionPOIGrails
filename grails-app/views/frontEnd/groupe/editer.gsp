@@ -42,7 +42,7 @@
             <g:select required="required" name="poi" optionValue="nom" optionKey="id" from="${listePOIs}"></g:select>
         </p>
         <g:if test="${flash.messageAjout}">
-            <p><label></label><span>${flash.messageModifInfo}</span></p>
+            <p><label></label><span>${flash.messageAjout}</span></p>
         </g:if>
         <g:submitButton name="bModif" value="Ajouter"/>
 
@@ -58,7 +58,7 @@
             <g:select required="required" name="poi" optionValue="nom" optionKey="id" from="${groupe.pois}"></g:select>
         </p>
         <g:if test="${flash.messageSupp}">
-            <p><label></label><span>${flash.messageModifInfo}</span></p>
+            <p><label></label><span>${flash.messageSupp}</span></p>
         </g:if>
         <g:submitButton name="bModif" value="Supprimer"/>
 
