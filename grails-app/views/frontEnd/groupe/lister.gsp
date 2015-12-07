@@ -13,8 +13,8 @@
     <body>
         <g:include view="frontEnd/menu.gsp"></g:include>
             <div class="content">
+            <g:link uri="/groupe/creer">Créer un groupe</g:link>
             <h3>Liste des groupes</h3>
-
             <table>
                 <thead>
                 <tr>

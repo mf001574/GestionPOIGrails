@@ -16,8 +16,11 @@ class UrlMappings {
         "/groupe/lister" (controller: "groupe",action: "lister")
         "/groupe/$id/editer" (controller: "groupe",action: "editer")
         "/groupe/$id/editer/modifier" (controller: "groupe",action: "modifier")
+        "/groupe/$id/editer/supprimerPOI" (controller: "groupe",action: "supprimerPOI")
+        "/groupe/$id/editer/ajouterPOI" (controller: "groupe",action: "ajouterPOI")
         "/groupe/$id" (controller: "groupe",action: "afficher")
-        "/groupe/$id/creer" (controller: "groupe",action: "creer")
+        "/groupe/creer" (controller: "groupe",action: "creer")
+        "/groupe/creerGroupe" (controller: "groupe",action: "creerGroupe")
         //Les mapping pour la page des utilisateurs au niveau back-end
         "/utilisateur/" (controller: "utilisateur", action: "index")
         //utilisateurs front-end
@@ -28,11 +31,13 @@ class UrlMappings {
         //Mapping poi
         "/POI"(controller: "POI", action: "index")
         "/POI/$id" (controller: "POI", action: "afficher")
+        "/POI/creer" (controller: "POI", action: "creer")
         "/POI/$id/commenter" (controller: "POI", action: "commenter")
         "/POI/lister" (controller: "POI", action: "lister")
         "/POI/$id/editer" (controller: "POI", action: "editer")
         "/POI/$id/editer/modifierInfo" (controller: "POI", action: "modifierInfo")
         "/POI/$id/editer/modifierEmplacement" (controller: "POI", action: "modifierEmplacement")
+        "/POI/creerPOI" (controller: "POI", action: "creerPoi")
         "500"(view:'/error')
 	}
 }

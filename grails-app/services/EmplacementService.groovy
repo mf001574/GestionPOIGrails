@@ -4,8 +4,8 @@ import grails.transaction.Transactional
 import entities.Emplacement
 @Transactional
 class EmplacementService {
-    String[] addE = ["Allée des cistes", "Chemin de la tour", "Avenue jean medecin","Rue de la taverne","Avenue des champs"]
-    double[][] coords =[[12.0,8.88],[4.44,-9.5],[14,5.68],[12,5.68],[10,5.58]]
+    String[] addE = ["Allée des fleurs", "Chemin de la tour", "Avenue jean medecin","Rue de la taverne","Avenue des champs"]
+    double[][] coords =[[43.7055849,7.2848589],[43.7038143,7.2805772],[43.688477,7.2690182],[43.6889389,7.28656380],[43.672499,7.2805772]]
     ArrayList<Emplacement> creerEmplacement(){
         ArrayList<Emplacement> emplacements = new ArrayList<Emplacement>()
         for (i in 0..addE.length-1){

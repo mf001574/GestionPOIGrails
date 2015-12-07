@@ -33,5 +33,37 @@
     </g:form>
 
 </div>
+<div class="content">
+
+    <h3>Ajouter un POI au groupe</h3>
+    <g:form uri="/groupe/${groupe.id}/editer/ajouterPOI"  method="POST">
+        <p>
+            <label>Liste des POIs : </label>
+            <g:select required="required" name="poi" optionValue="nom" optionKey="id" from="${listePOIs}"></g:select>
+        </p>
+        <g:if test="${flash.messageAjout}">
+            <p><label></label><span>${flash.messageModifInfo}</span></p>
+        </g:if>
+        <g:submitButton name="bModif" value="Ajouter"/>
+
+    </g:form>
+
+</div>
+<div class="content">
+
+    <h3>Supprimer un POI du groupe</h3>
+    <g:form uri="/groupe/${groupe.id}/editer/supprimerPOI"  method="POST">
+        <p>
+            <label>Liste des POIs du groupe : </label>
+            <g:select required="required" name="poi" optionValue="nom" optionKey="id" from="${groupe.pois}"></g:select>
+        </p>
+        <g:if test="${flash.messageSupp}">
+            <p><label></label><span>${flash.messageModifInfo}</span></p>
+        </g:if>
+        <g:submitButton name="bModif" value="Supprimer"/>
+
+    </g:form>
+
+</div>
 </body>
 </html>

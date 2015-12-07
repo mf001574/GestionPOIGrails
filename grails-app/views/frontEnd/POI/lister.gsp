@@ -13,6 +13,7 @@
 <body>
     <g:include view="frontEnd/menu.gsp"></g:include>
     <div class="content">
+        <g:link uri="/POI/creer">Créer un POI</g:link>
         <h3>Liste des POIs</h3>
         <table>
             <thead>

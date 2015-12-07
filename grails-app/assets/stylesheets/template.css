@@ -31,7 +31,7 @@ form p{
 form p label{
     flex-basis: 25%;
 }
-form p input, form p textarea{
+form p input, form p textarea, form p select{
     flex-basis: 75%;
 }
 form input[type="submit"]{
@@ -123,4 +123,8 @@ table a{
 }
 table a:hover{
     color:#3B6B11 ;
+}
+#map{
+    margin-left: auto;
+    margin-right: auto;
 }

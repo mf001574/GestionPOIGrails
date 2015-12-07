@@ -29,6 +29,38 @@
         <li><asset:image src="${img.src}"></asset:image></li>
     </g:each>
     </ul>
+
+    <div id="map" style="width: 650px; height: 300px;">... Please Wait ... The Map is loading ...</div>
+    <script>
+        var map;
+        function initMap() {
+            var myLatLng = {lat: 43.696, lng: 7.2656};
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: myLatLng,
+                zoom: 12
+            });
+            <g:each in="${groupe.pois}" var="p">
+            var emplacementLatitude = parseFloat("${p.emplacement.latitude}");
+            var emplacementLongitude = parseFloat("${p.emplacement.longitude}");
+            var POIInfos = "${p.nom}";
+            var infowindow = new google.maps.InfoWindow();
+            var pointOfInterestLatLng = {lat: emplacementLatitude, lng: emplacementLongitude};
+            var marker = new google.maps.Marker({
+                position: pointOfInterestLatLng,
+                map: map,
+                title: 'Map des POIs'
+            });
+            google.maps.event.addListener(marker, 'click', (function(marker, POIInfos) {
+                return function() {
+                    infowindow.setContent(POIInfos);
+                    infowindow.open(map, marker);
+                }
+            })(marker, POIInfos));
+            </g:each>
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
+            async defer></script>
 </div>
 
 </body>
