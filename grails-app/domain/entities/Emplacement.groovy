@@ -1,4 +1,4 @@
-
+package entities
 class Emplacement {
     String adresse
     double latitude

@@ -1,14 +1,16 @@
+package backEnd
 import static org.springframework.http.HttpStatus.*
+import  entities.*
 import grails.transaction.Transactional
-
 @Transactional(readOnly = true)
 class EmplacementController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
+        render(view: 'index.gsp')
         params.max = Math.min(max ?: 10, 100)
-        respond Emplacement.list(params), model: [emplacementInstanceCount: Emplacement.count()]
+        respond  Emplacement.list(params), model: [emplacementInstanceCount: Emplacement.count()]
     }
 
     def show(Emplacement emplacementInstance) {

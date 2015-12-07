@@ -1,7 +1,7 @@
 ;
 
 import grails.transaction.Transactional
-
+import entities.Utilisateur
 @Transactional
 class UtilisateurService {
     String[] emails = ["martin@gmail.com","toto@ymail.com","moise@gmail.com","jauvat@gmail.com","massa@gmail.com"]

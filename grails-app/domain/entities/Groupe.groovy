@@ -1,4 +1,4 @@
-
+package entities
 class Groupe{
 
     String nom

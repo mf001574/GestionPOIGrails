@@ -1,7 +1,9 @@
 
 
 import grails.transaction.Transactional
-
+import entities.Utilisateur
+import entities.POI
+import entities.Evaluation
 @Transactional
 class EvaluationService {
     Random rand = new Random();

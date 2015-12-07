@@ -30,6 +30,11 @@ class UtilisateurController {
 
     }
 
+    def lister(){
+        ArrayList<Utilisateur> utilisateurs = Utilisateur.findAll()
+        render(view: "/frontEnd/utilisateur/lister", model:["utilisateurs" : utilisateurs])
+    }
+
     def modifierInfo(){
         println("Modification des informations ->"+params)
         Utilisateur u = Utilisateur.findWhere(id:session.utilisateur.id)

@@ -1,0 +1,126 @@
+body{
+    background-color: rgb(235,235,235);
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+article,.content{
+    padding: 15px;
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    border: solid 1px rgb(200,200,200);
+    border-radius: 5px;
+    background-color: rgb(253,253,253);
+    margin-top : 15px;
+    margin-bottom: 15px;
+}
+h1, h3{
+    text-align: center;
+    color : #4d8618;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 15px;
+    color : #4d8618;
+}
+form p{
+    display: flex;
+}
+form p label{
+    flex-basis: 25%;
+}
+form p input, form p textarea{
+    flex-basis: 75%;
+}
+form input[type="submit"]{
+    background-color:#4d8618;
+    border: 0;
+    padding: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    color: white;
+}
+form span{
+    color:red;
+}
+form input[type="submit"]:hover{
+    background-color:#3B6B11;
+}
+
+nav{
+    background-color: #4d8618;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+nav li{
+    display: inline-block;
+    margin-right: -3px;
+}
+nav a{
+    display: block;
+    width: 120px;
+    height: 50px;
+    text-decoration: none;
+    text-align: center;
+    line-height: 50px;
+    color: white;
+    border-right: solid 1px white;
+}
+nav li:nth-child(1) a{
+    border-left: solid 1px white;
+}
+nav a:hover{
+    background-color:#3B6B11 ;
+}
+nav ul{
+    margin: inherit;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+
+}
+.content>table{
+    border: 1px solid #4d8618;
+    border-radius: 5px;
+    border-collapse: collapse;
+    width: 100%;
+}
+.content>table>thead{
+    background-color: #4d8618;
+    color : white;
+}
+th{
+    font-weight: normal;
+}
+.content>table>tbody>tr>td{
+    padding: 10px;
+}
+.content>table>tbody>tr:nth-child(2n){
+    background-color: rgb(245,245,245);
+}
+.content>table>tbody>tr:hover{
+    background-color: rgb(235,235,235);
+}
+.lImg{
+    list-style-type: none;
+}
+.lImg li{
+    display: inline-block;
+}
+.lImg li img{
+    width: 200px;
+    height: 165px;
+    border-radius: 5px;
+}
+
+table a{
+    color: #4d8618;
+}
+table a:hover{
+    color:#3B6B11 ;
+}

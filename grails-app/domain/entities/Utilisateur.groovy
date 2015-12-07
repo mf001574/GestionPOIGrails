@@ -1,4 +1,4 @@
-
+package entities
 class Utilisateur {
     String email
     String nom

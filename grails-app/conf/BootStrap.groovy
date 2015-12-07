@@ -1,5 +1,5 @@
 import projet.GenerateurUtilisateurService
-
+import entities.Image
 class BootStrap {
 
     ArrayList<POI> listePOI = new ArrayList<POI>()

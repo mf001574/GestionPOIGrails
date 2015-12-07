@@ -1,4 +1,4 @@
-
+package entities
 class Evaluation {
 
     int note

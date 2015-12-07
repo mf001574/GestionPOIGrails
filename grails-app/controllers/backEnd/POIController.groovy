@@ -1,5 +1,7 @@
+package backEnd
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
+import entities.*
 
 @Transactional(readOnly = true)
 class POIController {

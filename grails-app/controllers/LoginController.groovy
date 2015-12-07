@@ -1,5 +1,6 @@
-import grails.transaction.Transactional
 
+import grails.transaction.Transactional
+import entities.*
 
 @Transactional(readOnly = true)
 class LoginController {
@@ -11,6 +12,9 @@ class LoginController {
 
     def login(){
         //va charger login.gsp dans le dossier login
+        if(session.utilisateur != null){
+            redirect(uri:"/utilisateur/"+session.utilisateur.id)
+        }
     }
     def connect(){
         println("Recherche de l'utilisateur avec les parametres --->"+params)
@@ -23,5 +27,10 @@ class LoginController {
             flash.message = "Erreur d'authentification"
             redirect(action:"login")
         }
+    }
+
+    def disconnect(){
+        session.invalidate();
+        redirect(uri:"/")
     }
 }
