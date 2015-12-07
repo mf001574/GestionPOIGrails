@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta name="layout" content="main"/>
-    <title>Welcome to Grails</title>
+    <title>Back-End</title>
     <style type="text/css" media="screen">
     #status {
         background-color: #eee;
@@ -84,14 +84,18 @@
 <body>
 <a href="#page-body" class="skip"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 <div id="page-body" role="main">
+   <g:link controller="login" action="login" >Retour</g:link>
     <h1>Back-end de l'application gestion de POI</h1>
     <p>Les rubriques ci-dessous permettent de gérer les données de l'application.</p>
     <div id="controller-list" role="navigation">
         <h2>Menu</h2>
         <ul>
-            <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
-                <li class="controller"><g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link></li>
-            </g:each>
+            <li class="controller"><g:link controller="utilisateur" action="index" >Utilisateurs</g:link></li>
+            <li class="controller"><g:link controller="emplacement" action="index" >Emplacements</g:link></li>
+            <li class="controller"><g:link controller="groupe" action="index" >Groupes</g:link></li>
+            <li class="controller"><g:link controller="image" action="index" >Images</g:link></li>
+            <li class="controller"><g:link controller="POI" action="index" >POIs</g:link></li>
+            <li class="controller"><g:link controller="evaluation" action="index" >Evaluations</g:link></li>
         </ul>
     </div>
 
